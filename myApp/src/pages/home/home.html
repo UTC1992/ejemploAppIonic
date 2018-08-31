@@ -1,17 +1,83 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
+  <ion-navbar color="secondary">
+    <ion-buttons start>
+      <button ion-button icon-only>
+        <ion-icon name="contact"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Inicio</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <button ion-button outline>Button</button>
+
+  <button ion-button color="light" small>Light</button>
+  <button ion-button large>Default</button>
+  <button ion-button color="secondary">Secondary</button>
+  <button ion-button color="danger">Danger</button>
+  <button ion-button color="dark">Dark</button>
+
+  <!-- Float the icon left -->
+  <button ion-button icon-start>
+    <ion-icon name="home"></ion-icon>
+    Left Icon
+  </button>
+
+  <!-- Float the icon right -->
+  <button ion-button icon-end>
+    Right Icon
+    <ion-icon name="home"></ion-icon>
+  </button>
+
+  <!-- Only icon (no text) -->
+  <button ion-button icon-only>
+    <ion-icon name="home"></ion-icon>
+  </button>
+
+  <!--IR A OTRA PAGINA-->
+  <p>Ejemplo para ir a otra pagina</p>
+  <button ion-button (click)="otraPagina()">Ir a otra página</button>
+
+  <!--GRID-->
+    <ion-grid>
+      <ion-row align-items-center>
+        <ion-col col-auto>
+          <p>La vida es una experiencia maravillosa que hay que disfrutar a cada instante</p>
+          <p>La vida es una experiencia maravillosa que hay que disfrutar a cada instante</p>
+          <p>La vida es una experiencia maravillosa que hay que disfrutar a cada instante</p>
+        </ion-col>
+        <ion-col col-auto>
+            <p>Columnasssss</p>
+          </ion-col>
+      </ion-row>
+      <ion-row>
+      <ion-col col-8>
+        <p>Columnasssss</p>
+      </ion-col>
+      <ion-col col-4>
+          <p>Columnasssss</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  <!--GRID-->
+
+  <!--ALERT-->
+  <button ion-button block color="dark" (click)="alertaBasica()">No toques este boton</button>
+  <button ion-button block color="dark" (click)="alertaBasica2()">Alerta 2</button>
+  <!--ALERT-->
+
+  <!--DATOS SERVIDOR EXTERNO-->
+    <h2>Datos externos</h2>
+    <ion-list>
+      <button ion-item *ngFor="let usuario of usuarios">
+        {{ usuario.id }} -- {{ usuario.name }}
+      </button>
+    </ion-list>
+  <!--DATOS SERVIDOR EXTERNO-->
 </ion-content>
